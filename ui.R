@@ -107,7 +107,7 @@ shinyUI(navbarPage("Visualisering och faktoranalys av SVTs valkompass inför rik
   mainPanel(plotlyOutput(
     "plot", width = 800, height = 600
   ))
-  ),tabPanel("Partinivå (diagram)",
+  ),tabPanel("Partinivå (spridning)",
              sidebarPanel(
                checkboxGroupInput(
                  "vilka_parti",
