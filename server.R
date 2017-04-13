@@ -3,6 +3,7 @@ library(dplyr)
 library(ggplot2)
 library(magrittr)
 library(plotly) 
+load(".RData")
 # lite jitter tillagt för att separera identiska punkter (factor=0.3, amount = 0.05)
 shinyServer(function(input, output) {
   output$plot <- renderPlotly({
