@@ -85,13 +85,19 @@ shinyServer(function(input, output) {
     renderPlotly({
       parti_means <-
         joined_dataset %>% filter(vald %in% input$vilka_parti) %>% filter(Parti %in% input$vilka2_parti) %>%
-        ggplot(aes(
+        ggplot(if(input$vad == 0){aes(
           x = F1,
           y = F2,
           color = Parti,
           group = Parti
-          
-        )) +
+        )}else{aes(
+          x = F1,
+          y = F2,
+          name = Namn,
+          color = Parti,
+          group = Parti
+        )}
+        ) +
         scale_colour_manual(values = partycols) +
         stat_ellipse() +
         labs(x = "Vänster-Höger", y = "Tradition-Auktoritet-Nationalist kontra Grön-Alternativ-Liberal", color =
@@ -99,17 +105,24 @@ shinyServer(function(input, output) {
         scale_y_continuous(breaks = NULL) +
         scale_x_continuous(breaks = NULL) +
         coord_fixed(ratio = 3 / 4) +
-        if(input$vad == 0){geom_point(
-          aes(x = F1, y = F2),
-          data = (
-            joined_dataset %>% filter(vald %in% input$vilka_parti) %>%
-              group_by(Parti) %>%
-              summarise(F1 = mean(F1),
-                        F2 = mean(F2)) %>% filter(Parti %in% input$vilka2_parti)
+        if (input$vad == 0) {
+          geom_point(
+            aes(x = F1, y = F2),
+            data = (
+              joined_dataset %>% filter(vald %in% input$vilka_parti) %>%
+                group_by(Parti) %>%
+                summarise(F1 = mean(F1),
+                          F2 = mean(F2)) %>% filter(Parti %in% input$vilka2_parti)
+            )
           )
-        )}else{
+        } else{
           geom_point()
         }
-      parti_means <- parti_means %>% ggplotly(tooltip = c("group"))
+      parti_means <-
+        if (input$vad == 1) {
+          ggplotly(parti_means, tooltip = c("name", "group"))
+        } else{
+          ggplotly(parti_means, tooltip = c("group"))
+        }
     })
 })
