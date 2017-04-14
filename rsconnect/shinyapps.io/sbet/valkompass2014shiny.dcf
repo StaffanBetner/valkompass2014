@@ -1,0 +1,10 @@
+name: valkompass2014shiny
+title: valkompass2014shiny
+account: sbet
+server: shinyapps.io
+appId: 171084
+bundleId: 789272
+url: https://sbet.shinyapps.io/valkompass2014shiny/
+when: 1492170611.79477
+asMultiple: FALSE
+asStatic: FALSE
