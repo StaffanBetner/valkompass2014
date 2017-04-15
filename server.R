@@ -4,6 +4,9 @@ library(ggplot2)
 library(magrittr)
 library(plotly)
 load(".RData")
+xaxis = list(range = c(-3.6, 3.4))
+yaxis = list(range = c(-4.2, 3.3))
+
 # lite jitter tillagt för att separera identiska punkter (factor=0.3, amount = 0.05)
 shinyServer(function(input, output) {
   output$plot <- renderPlotly({
@@ -26,7 +29,9 @@ shinyServer(function(input, output) {
         scale_x_continuous(breaks = NULL) +
         coord_fixed(ratio = 3 / 4)
       parti_obj <-
-        parti_obj %>% ggplotly(tooltip = c("name", "group"))
+        parti_obj %>% ggplotly(tooltip = c("name", "group")) %>% layout(
+          xaxis = xaxis,
+          yaxis = yaxis)
     } else {
       #höger-vänster
       if (input$fargsattning == "Var någonstans skulle du placera dig själv på en politisk vänster-högerskala?") {
@@ -55,7 +60,9 @@ shinyServer(function(input, output) {
           coord_fixed(ratio = 3 / 4) +
           scale_colour_manual(values = c("#800000", "#ff0000", "#829595", "#0000cc", "#000066")) # red to blue
         left_right_obj <-
-          left_right_obj %>% ggplotly(tooltip = c("name", "group"))
+          left_right_obj %>% ggplotly(tooltip = c("name", "group"))%>% layout(
+            xaxis = xaxis,
+            yaxis = yaxis)
       } else{
         quest_obj <-
           joined_dataset %>% filter(vald %in% input$vilka) %>% filter(Parti %in% input$vilka2) %>%
@@ -77,7 +84,9 @@ shinyServer(function(input, output) {
           coord_fixed(ratio = 3 / 4) +
           scale_colour_manual(values = questcols) # red to green
         quest_obj <-
-          quest_obj %>% ggplotly(tooltip = c("name", "group"))
+          quest_obj %>% ggplotly(tooltip = c("name", "group"))%>% layout(
+            xaxis = xaxis,
+            yaxis = yaxis)
       } #frågor
     }
   })
@@ -120,9 +129,13 @@ shinyServer(function(input, output) {
         }
       parti_means <-
         if (input$vad == 1) {
-          ggplotly(parti_means, tooltip = c("name", "group"))
+          ggplotly(parti_means, tooltip = c("name", "group")) %>% layout(
+            xaxis = xaxis,
+            yaxis = yaxis)
         } else{
-          ggplotly(parti_means, tooltip = c("group"))
-        }
+          ggplotly(parti_means, tooltip = c("group")) %>% layout(
+            xaxis = xaxis,
+            yaxis = yaxis)
+        } 
     })
 })
