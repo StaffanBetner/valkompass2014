@@ -114,9 +114,13 @@ shinyUI(
     tabPanel(
       "Partinivå (spridning)",
       sidebarPanel(
-        radioButtons("vad", label=h3("Vad vill du se för punkter?"),
-                     choices = list("Partimedelvärden" = "0",
-                                    "Samtliga partirepresentanter" = "1")
+        radioButtons(
+          "vad",
+          label = h3("Vad vill du se för punkter?"),
+          choices = list(
+            "Partimedelvärden" = "0",
+            "Samtliga partirepresentanter" = "1"
+          )
         ),
         checkboxGroupInput(
           "vilka_parti",
@@ -175,7 +179,16 @@ shinyUI(
         mellan GAL-TAN och höger-vänster-självskattningen 0.08,
         och mellan placeringarna på de olika axlarna är -0.02."
       ),
-      helpText("All kod kommer att publiceras framöver.")
+      helpText((tags$div(
+        checked = NA,
+        tags$p(
+          "Koden för faktoranalysen finns ",
+          tags$a(href = "shiny.rstudio.com/tutorial", "här,"),
+          " och",
+          tags$a(href = "shiny.rstudio.com/tutorial", "här"),
+          " finns koden för appen."
+        )
+      )))
       )
-      )
-  )
+)
+)
