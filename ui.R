@@ -183,9 +183,9 @@ shinyUI(
         checked = NA,
         tags$p(
           "Koden för faktoranalysen finns ",
-          tags$a(href = "shiny.rstudio.com/tutorial", "här,"),
+          tags$a(href = "https://github.com/StaffanBetner/valkompass2014rd", "här,"),
           " och",
-          tags$a(href = "shiny.rstudio.com/tutorial", "här"),
+          tags$a(href = "https://github.com/StaffanBetner/shiny-server/tree/master/valkompass2014", "här"),
           " finns koden för appen."
         )
       )))
