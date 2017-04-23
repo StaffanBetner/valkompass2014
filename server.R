@@ -58,7 +58,7 @@ shinyServer(function(input, output) {
           scale_y_continuous(breaks = NULL) +
           scale_x_continuous(breaks = NULL) +
           coord_fixed(ratio = 3 / 4) +
-          scale_colour_manual(values = c("#800000", "#ff0000", "#829595", "#0000cc", "#000066")) # red to blue
+          scale_colour_manual(values = leftrightcols) # red to blue
         left_right_obj <-
           left_right_obj %>% ggplotly(tooltip = c("name", "group"))%>% layout(
             xaxis = xaxis,
