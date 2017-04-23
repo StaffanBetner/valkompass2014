@@ -7,7 +7,6 @@ load(".RData")
 xaxis = list(range = c(-3.6, 3.4))
 yaxis = list(range = c(-4.2, 3.3))
 
-# lite jitter tillagt för att separera identiska punkter (factor=0.3, amount = 0.05)
 shinyServer(function(input, output) {
   output$plot <- renderPlotly({
     if (input$fargsattning == "Parti") {
