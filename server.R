@@ -26,7 +26,9 @@ shinyServer(function(input, output) {
                "") +
         scale_y_continuous(breaks = NULL) +
         scale_x_continuous(breaks = NULL) +
-        coord_fixed(ratio = 3 / 4)
+        coord_fixed(ratio = 3 / 4)+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),axis.text.x=element_blank(),
+                                         axis.ticks.x=element_blank(), axis.text.y=element_blank(),
+                                         axis.ticks.y=element_blank())
       parti_obj <-
         parti_obj %>% ggplotly(tooltip = c("name", "group")) %>% layout(
           xaxis = xaxis,
@@ -57,7 +59,9 @@ shinyServer(function(input, output) {
           scale_y_continuous(breaks = NULL) +
           scale_x_continuous(breaks = NULL) +
           coord_fixed(ratio = 3 / 4) +
-          scale_colour_manual(values = leftrightcols) # red to blue
+          scale_colour_manual(values = leftrightcols)+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),axis.text.x=element_blank(),
+                                                            axis.ticks.x=element_blank(), axis.text.y=element_blank(),
+                                                            axis.ticks.y=element_blank()) # red to blue
         left_right_obj <-
           left_right_obj %>% ggplotly(tooltip = c("name", "group"))%>% layout(
             xaxis = xaxis,
@@ -81,7 +85,9 @@ shinyServer(function(input, output) {
           scale_y_continuous(breaks = NULL) +
           scale_x_continuous(breaks = NULL) +
           coord_fixed(ratio = 3 / 4) +
-          scale_colour_manual(values = questcols) # red to green
+          scale_colour_manual(values = questcols)+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),axis.text.x=element_blank(),
+                                                        axis.ticks.x=element_blank(), axis.text.y=element_blank(),
+                                                        axis.ticks.y=element_blank()) # red to green
         quest_obj <-
           quest_obj %>% ggplotly(tooltip = c("name", "group"))%>% layout(
             xaxis = xaxis,
@@ -112,6 +118,9 @@ shinyServer(function(input, output) {
                "") +
         scale_y_continuous(breaks = NULL) +
         scale_x_continuous(breaks = NULL) +
+        theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),axis.text.x=element_blank(),
+              axis.ticks.x=element_blank(), axis.text.y=element_blank(),
+              axis.ticks.y=element_blank())+
         coord_fixed(ratio = 3 / 4) +
         if (input$vad == 0) {
           geom_point(
