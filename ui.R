@@ -180,12 +180,12 @@ Dessa skalor kräver tolkning, vilka jag tolkat som en traditionell höger-väns
 Jag har valt att använda de av Hooghe, Marks och Wilson (2002) stiftade termerna: Grön-Alternativ-Liberal kontra Tradition-Auktoritet-Nationalist (GAL-TAN), men andra tänkbara namn är New Politics eller autonomi-delegeringsdimensionen (Henrik Oscarsson).
         Korrelationen (Spearmans mått) mellan höger-vänsterplaceringen och självskattningen på den skalan är 0.84,
         mellan GAL-TAN och höger-vänster-självskattningen 0.26,
-        och mellan placeringarna på de olika axlarna är 0.04."
+        och mellan placeringarna på de olika axlarna 0.04."
       ),
       helpText((tags$div(
         checked = NA,
         tags$p(tags$a(href = "https://github.com/StaffanBetner/shiny-server/tree/master/valkompass2014", "Här"),
-          " finns koden för appen."
+          " finns koden för appen. Det är inte jättebra dokumenterat, men där finns allt som behövs."
         )
       )))
       )
