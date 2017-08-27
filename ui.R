@@ -70,9 +70,9 @@ shinyUI(
           "vilka",
           label = h3("Vilka personer vill du visa?"),
           choices = list(
-            "Nuvarande riksdagsledamöter" = "1",
-            "Avgått som riksdagsledamöter" = "Avgått",
-            "Regeringen" = "Regeringen",
+            "Riksdagsledamöter" = "1",
+          #  "Avgått som riksdagsledamöter" = "Avgått",
+            "Statsråd" = "Regeringen",
             "Övriga" = "0"
           ),
           selected = 1
@@ -83,8 +83,8 @@ shinyUI(
           choices = list(
             "Centerpartiet" = "Centerpartiet",
             "Feministiskt initiativ" = "Feministiskt initiativ",
-            "Folkpartiet" = "Folkpartiet",
             "Kristdemokraterna" = "Kristdemokraterna",
+            "Liberalerna" = "Liberalerna",
             "Miljöpartiet" = "Miljöpartiet",
             "Moderaterna" = "Moderaterna",
             "Piratpartiet" = "Piratpartiet",
@@ -95,8 +95,8 @@ shinyUI(
           selected = c(
             "Centerpartiet",
             "Feministiskt initiativ",
-            "Folkpartiet",
             "Kristdemokraterna",
+            "Liberalerna",
             "Miljöpartiet",
             "Moderaterna",
             "Piratpartiet",
@@ -126,9 +126,9 @@ shinyUI(
           "vilka_parti",
           label = h3("Vilka personer vill du ha med?"),
           choices = list(
-            "Nuvarande riksdagsledamöter" = "1",
-            "Avgått som riksdagsledamöter" = "Avgått",
-            "Regeringen" = "Regeringen",
+            "Riksdagsledamöter" = "1",
+          #  "Avgått som riksdagsledamöter" = "Avgått",
+            "Statsråd" = "Regeringen",
             "Övriga" = "0"
           ),
           selected = 1
@@ -139,8 +139,8 @@ shinyUI(
           choices = list(
             "Centerpartiet" = "Centerpartiet",
             "Feministiskt initiativ" = "Feministiskt initiativ",
-            "Folkpartiet" = "Folkpartiet",
             "Kristdemokraterna" = "Kristdemokraterna",
+            "Liberalerna" = "Liberalerna",
             "Miljöpartiet" = "Miljöpartiet",
             "Moderaterna" = "Moderaterna",
             "Piratpartiet" = "Piratpartiet",
@@ -151,8 +151,8 @@ shinyUI(
           selected = c(
             "Centerpartiet",
             "Feministiskt initiativ",
-            "Folkpartiet",
             "Kristdemokraterna",
+            "Liberalerna",
             "Miljöpartiet",
             "Moderaterna",
             "Piratpartiet",
@@ -171,21 +171,20 @@ shinyUI(
       "Om",
       helpText(
         "Denna visualisering är byggd av Staffan Betnér (@staffanbetner). Rådatat kommer från SVT Pejl.
-        Samtliga individers placeringar är skattade med en två-dimensionell nominell IRT-modell, en slags faktoranalys (se Wikipedia) för kategorivariabler."
+        Samtliga individers placeringar är skattade med blackbox-skalning, en slags faktoranalys (se Wikipedia) för så kallade ställningstagandeskalor. 
+        Tidigare användes en annan modell, varför kartan skiljer sig åt från tidigare, men strukturen är densamma."
       ),
       helpText(
-        "Skalorna är inte konceptuella/ideologiska, utan bygger på hur olika åsikter hänger ihop hos samtliga riksdagskandidater.
-        Korrelationen (Spearmans mått) mellan höger-vänsterplaceringen och självskattningen på den skalan är 0.85,
-        mellan GAL-TAN och höger-vänster-självskattningen 0.08,
-        och mellan placeringarna på de olika axlarna är -0.02."
+        "Skalorna är inte konceptuella/ideologiska, utan bygger rent empiriskt på hur olika åsikter hänger ihop hos samtliga riksdagskandidater.
+Dessa skalor kräver tolkning, vilka jag tolkat som en traditionell höger-vänster-skala samt en skala som kan beskrivas som kulturell höger-vänster (många tolkningar av denna konfliktdimenson finns). 
+Jag har valt att använda de av Hooghe, Marks och Wilson (2002) stiftade termerna: Grön-Alternativ-Liberal kontra Tradition-Auktoritet-Nationalist (GAL-TAN), men andra tänkbara namn är New Politics eller autonomi-delegeringsdimensionen (Henrik Oscarsson).
+        Korrelationen (Spearmans mått) mellan höger-vänsterplaceringen och självskattningen på den skalan är 0.84,
+        mellan GAL-TAN och höger-vänster-självskattningen 0.26,
+        och mellan placeringarna på de olika axlarna är 0.04."
       ),
       helpText((tags$div(
         checked = NA,
-        tags$p(
-          "Koden för faktoranalysen finns ",
-          tags$a(href = "https://github.com/StaffanBetner/valkompass2014rd", "här,"),
-          " och",
-          tags$a(href = "https://github.com/StaffanBetner/shiny-server/tree/master/valkompass2014", "här"),
+        tags$p(tags$a(href = "https://github.com/StaffanBetner/shiny-server/tree/master/valkompass2014", "Här"),
           " finns koden för appen."
         )
       )))
