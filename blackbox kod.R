@@ -76,12 +76,12 @@ survey[survey==3] <- NA
 survey[survey==4] <- 3
 survey[survey==5] <- 4
 survey <- survey %>% as.data.frame()
-survey %>% View
+#survey %>% View
 
-blackbox(survey, minscale=5, dims=2)$individuals[[2]]
+#blackbox(survey, minscale=5, dims=2)$individuals[[2]]
 candidates <- c(valkompass, as_tibble(blackbox(survey, minscale=5, dims=2)$individuals[[2]])) %>% as_tibble
 names(candidates)[50:51] <- c("F1","F2")
-candidates %>% View
+#candidates %>% View
 
 elected <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1V0Y5LMTEASRtoxvM8kNV4DEq2pLmDPN8vRs0fOZ0Xnk/edit#gid=835472634") %>% select(Id, vald)
 #import elected
