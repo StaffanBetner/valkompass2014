@@ -1,7 +1,6 @@
 library(gsheet)
 library(tidyverse)
 library(basicspace)
-library(plotly)
 library(plyr)
 
 data_orig <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1dkmpZb-2YcUxI5DtBs_V32sKotO5jkewCDMdRUgOHBs/edit#gid=2062535509")
