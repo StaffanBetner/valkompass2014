@@ -2,6 +2,7 @@ library(gsheet)
 library(tidyverse)
 library(basicspace)
 library(plyr)
+load(file="valkompass2014/.RData")
 
 data_orig <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1dkmpZb-2YcUxI5DtBs_V32sKotO5jkewCDMdRUgOHBs/edit#gid=2062535509")
 valkompass <- data_orig %>% 
