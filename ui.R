@@ -171,16 +171,16 @@ shinyUI(
       "Om",
       helpText(
         "Denna visualisering är byggd av Staffan Betnér (@staffanbetner). Rådatat kommer från SVT Pejl.
-        Samtliga individers placeringar är skattade med blackbox-skalning, en slags faktoranalys (se Wikipedia) för så kallade ställningstagandeskalor. 
+        Samtliga individers placeringar är skattade med hjälp av en IRT-modell, en slags faktoranalys (se Wikipedia) för kategoriska variabler. 
         Tidigare användes en annan modell, varför kartan skiljer sig åt från tidigare, men strukturen är densamma."
       ),
       helpText(
         "Skalorna är inte konceptuella/ideologiska, utan bygger rent empiriskt på hur olika åsikter hänger ihop hos samtliga riksdagskandidater.
 Dessa skalor kräver tolkning, vilka jag tolkat som en traditionell höger-vänster-skala samt en skala som kan beskrivas som kulturell höger-vänster (många tolkningar av denna konfliktdimenson finns). 
 Jag har valt att använda de av Hooghe, Marks och Wilson (2002) stiftade termerna: Grön-Alternativ-Liberal kontra Tradition-Auktoritet-Nationalist (GAL-TAN), men andra tänkbara namn är New Politics eller autonomi-delegeringsdimensionen (Henrik Oscarsson).
-        Korrelationen (Spearmans mått) mellan höger-vänsterplaceringen och självskattningen på den skalan är 0.84,
-        mellan GAL-TAN och höger-vänster-självskattningen 0.26,
-        och mellan placeringarna på de olika axlarna 0.04."
+        Korrelationen (Spearmans mått) mellan höger-vänsterplaceringen och självskattningen på den skalan är 0.85,
+        mellan GAL-TAN och höger-vänster-självskattningen -0.08,
+        och mellan placeringarna på de olika axlarna 0.02."
       ),
       helpText((tags$div(
         checked = NA,

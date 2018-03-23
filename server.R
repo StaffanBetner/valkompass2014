@@ -4,8 +4,8 @@ library(ggplot2)
 library(magrittr)
 library(plotly)
 load(".RData")
-xaxis = list(range = c(-0.64, 0.7))# x = -0.6 to 0.61
-yaxis = list(range = c(-0.9, 0.7))#y = -0.75 to 0.55
+xaxis = list(range = c(-4.2, 3.4))#list(range = c(-0.64, 0.7)) #blackbox legacy
+yaxis = list(range = c(-3.7, 4.5))#list(range = c(-0.9, 0.7)) #blackbox legacy
 
 shinyServer(function(input, output) {
   output$plot <- renderPlotly({
@@ -22,7 +22,7 @@ shinyServer(function(input, output) {
         )) +
         geom_point() +
         scale_colour_manual(values = partycols) +
-        labs(x = "Vänster-Höger", y = "Tradition-Auktoritet-Nationalist kontra Grön-Alternativ-Liberal", color =
+        labs(x = "Vänster-Höger", y = "Grön-Alternativ-Liberal kontra Tradition-Auktoritet-Nationalist", color =
                "") +
         scale_y_continuous(breaks = NULL) +
         scale_x_continuous(breaks = NULL) +
@@ -53,7 +53,7 @@ shinyServer(function(input, output) {
           )) +
           geom_point() +
           labs(x = "Vänster-Höger",
-               y = "Tradition-Auktoritet-Nationalist kontra Grön-Alternativ-Liberal",
+               y = "Grön-Alternativ-Liberal kontra Tradition-Auktoritet-Nationalist",
                color =
                  "") +
           scale_y_continuous(breaks = NULL) +
@@ -79,7 +79,7 @@ shinyServer(function(input, output) {
           )) +
           geom_point() +
           labs(x = "Vänster-Höger",
-               y = "Tradition-Auktoritet-Nationalist kontra Grön-Alternativ-Liberal",
+               y = "Grön-Alternativ-Liberal kontra Tradition-Auktoritet-Nationalist",
                color =
                  "") +
           scale_y_continuous(breaks = NULL) +
@@ -114,7 +114,7 @@ shinyServer(function(input, output) {
         ) +
         scale_colour_manual(values = partycols) +
         stat_ellipse() +
-        labs(x = "Vänster-Höger", y = "Tradition-Auktoritet-Nationalist kontra Grön-Alternativ-Liberal", color =
+        labs(x = "Vänster-Höger", y = "Grön-Alternativ-Liberal kontra Tradition-Auktoritet-Nationalist", color =
                "") +
         scale_y_continuous(breaks = NULL) +
         scale_x_continuous(breaks = NULL) +
