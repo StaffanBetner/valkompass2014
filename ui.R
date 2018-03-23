@@ -184,7 +184,7 @@ Jag har valt att använda de av Hooghe, Marks och Wilson (2002) stiftade termern
       ),
       helpText((tags$div(
         checked = NA,
-        tags$p(tags$a(href = "https://github.com/StaffanBetner/shiny-server/tree/master/valkompass2014", "Här"),
+        tags$p(tags$a(href = "https://github.com/StaffanBetner/valkompass2014", "Här"),
           " finns koden för appen. Det är inte jättebra dokumenterat, men där finns allt som behövs."
         )
       )))
